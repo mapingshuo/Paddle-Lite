@@ -209,7 +209,7 @@ FUNCTION(build_protobuf TARGET_NAME BUILD_FOR_HOST)
                 "-DCMAKE_C_FLAGS=${CMAKE_C_FLAGS}"
                 "-DCMAKE_C_FLAGS_DEBUG=${CMAKE_C_FLAGS_DEBUG}"
                 "-DCMAKE_C_FLAGS_RELEASE=${CMAKE_C_FLAGS_RELEASE}"
-                "-DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}"
+                "-DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS} -fvisibility=default -fno-visibility-inlines-hidden -fno-function-sections"
                 "-DCMAKE_CXX_FLAGS_RELEASE=${CMAKE_CXX_FLAGS_RELEASE}"
                 "-DCMAKE_CXX_FLAGS_DEBUG=${CMAKE_CXX_FLAGS_DEBUG}")
     ENDIF()
@@ -235,7 +235,7 @@ FUNCTION(build_protobuf TARGET_NAME BUILD_FOR_HOST)
                 -DCMAKE_BUILD_TYPE=${THIRD_PARTY_BUILD_TYPE}
                 -DCMAKE_INSTALL_PREFIX=${PROTOBUF_INSTALL_DIR}
                 -DCMAKE_INSTALL_LIBDIR=lib
-                -DBUILD_SHARED_LIBS=OFF
+                -DBUILD_SHARED_LIBS=ON
             CMAKE_CACHE_ARGS
                 -DCMAKE_INSTALL_PREFIX:PATH=${PROTOBUF_INSTALL_DIR}
                 -DCMAKE_BUILD_TYPE:STRING=${THIRD_PARTY_BUILD_TYPE}
@@ -261,7 +261,7 @@ FUNCTION(build_protobuf TARGET_NAME BUILD_FOR_HOST)
                 -DCMAKE_BUILD_TYPE=${THIRD_PARTY_BUILD_TYPE}
                 -DCMAKE_INSTALL_PREFIX=${PROTOBUF_INSTALL_DIR}
                 -DCMAKE_INSTALL_LIBDIR=lib
-                -DBUILD_SHARED_LIBS=OFF
+                -DBUILD_SHARED_LIBS=ON
             CMAKE_CACHE_ARGS
                 -DCMAKE_INSTALL_PREFIX:PATH=${PROTOBUF_INSTALL_DIR}
                 -DCMAKE_BUILD_TYPE:STRING=${THIRD_PARTY_BUILD_TYPE}

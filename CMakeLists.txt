@@ -144,8 +144,8 @@ if (WITH_LITE AND LITE_WITH_LIGHT_WEIGHT_FRAMEWORK)
         # TODO(sangoly): refine WITH_LITE and LITE_WITH_LIGHT_WEIGHT_FRAMEWORK
         include(external/gtest)     # download, build, install gtest
         include(ccache)             # set ccache for compilation
-        include(external/protobuf)  # download, build, install protobuf
     endif()
+    include(external/protobuf)  # download, build, install protobuf
 
     # for opencl
     if (LITE_WITH_OPENCL)

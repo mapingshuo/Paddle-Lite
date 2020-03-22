@@ -140,6 +140,7 @@ function make_tiny_publish_so {
       -DXPU_SDK_ROOT=$XPU_SDK_ROOT \
       -DARM_TARGET_OS=${os} -DARM_TARGET_ARCH_ABI=${abi} -DARM_TARGET_LANG=${lang}
 
+  make extern_protobuf -j$NUM_PROC
   make publish_inference -j$NUM_PROC
   cd - > /dev/null
 }
